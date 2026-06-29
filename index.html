@@ -34,7 +34,6 @@
       background: #00bcd4;
       border-radius: 10px;
     }
-    /* glassmorphism navbar */
     .navbar {
       background: rgba(11, 13, 18, 0.85);
       backdrop-filter: blur(16px);
@@ -76,7 +75,6 @@
     .nav-link.active {
       color: #00bcd4 !important;
     }
-    /* hero — new background image from your link */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -91,9 +89,9 @@
       position: absolute;
       inset: 0;
       background: url('https://i.ibb.co.com/6cKM0dfQ/pngtree-future-tech-studio-image-18663928.png') no-repeat center center/cover;
-      opacity: 0.35;
+      opacity: 0.3;
       z-index: 0;
-      filter: saturate(1.4) brightness(0.7);
+      filter: saturate(1.2) brightness(0.5);
     }
     .hero .container {
       position: relative;
@@ -162,7 +160,6 @@
       background: linear-gradient(90deg, #00bcd4, #008c9e);
       border-radius: 4px;
     }
-    /* card style with color accents */
     .about-card,
     .exp-card,
     .contact-form {
@@ -332,7 +329,6 @@
       border-radius: 40px;
       font-weight: 500;
     }
-    /* new color accents for sections */
     .bg-section-1 {
       background: #0b0d12;
     }
@@ -341,6 +337,41 @@
     }
     .bg-section-3 {
       background: #0b0d12;
+    }
+    .feature-img-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .feature-img-row img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 24px;
+      border: 2px solid #282e3a;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+      transition: 0.3s;
+      object-fit: cover;
+      height: 180px;
+    }
+    .feature-img-row img:hover {
+      transform: scale(1.03);
+      border-color: #00bcd4;
+    }
+    .about-feature-img {
+      width: 100%;
+      border-radius: 24px;
+      margin-top: 18px;
+      border: 2px solid #2a303e;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+      transition: 0.3s;
+      max-height: 200px;
+      object-fit: cover;
+    }
+    .about-feature-img:hover {
+      border-color: #00bcd4;
+      transform: scale(1.01);
     }
     @media (max-width: 768px) {
       .hero h1 {
@@ -358,6 +389,10 @@
       }
       .contact-form {
         padding: 28px 20px;
+      }
+      .feature-img-row img {
+        max-width: 100%;
+        height: 160px;
       }
     }
   </style>
@@ -383,7 +418,7 @@
     </div>
   </nav>
 
-  <!-- Hero with new background image -->
+  <!-- Hero with only profile image (no extra images under it) -->
   <section id="home" class="hero">
     <div class="container">
       <div class="row align-items-center gy-5">
@@ -401,14 +436,16 @@
         </div>
         <div class="col-lg-5 order-lg-1 order-1 text-center" data-aos="fade-left">
           <div class="profile-wrapper">
+            <!-- restored single profile image -->
             <img class="profile-img" src="https://i.postimg.cc/0QXcLdd3/IMG-20260518-151543.png" alt="Md. Jubayer Ahmed" />
           </div>
+          <!-- no extra images under profile -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About (with three new images placed inside about cards and between sections) -->
   <section id="about" class="section-padding bg-section-1">
     <div class="container">
       <div class="section-title">
@@ -431,6 +468,8 @@
               <a href="#contact" class="btn-outline-contact"><i class="fas fa-paper-plane"></i> Email Me</a>
               <a href="tel:+8801795700614" class="btn-outline-contact"><i class="fas fa-phone-alt"></i> Call Me</a>
             </div>
+            <!-- first new image inside about card -->
+            <img class="about-feature-img" src="https://i.postimg.cc/yWJ5Hr80/file-00000000cf7c71f694009b8bf91bac8b.png" alt="feature" />
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -443,7 +482,15 @@
               <span class="badge-soft"><i class="fab fa-react"></i> React</span>
               <span class="badge-soft"><i class="fab fa-node"></i> Node.js</span>
             </div>
+            <!-- second new image inside about card -->
+            <img class="about-feature-img mt-3" src="https://i.postimg.cc/BXHV8LD6/file-000000009b3071f69eeb4cdb7382c95b.png" alt="feature2" />
           </div>
+        </div>
+      </div>
+      <!-- third new image placed between about and skills (separate row) -->
+      <div class="row mt-4" data-aos="fade-up">
+        <div class="col-12 text-center">
+          <img src="https://i.postimg.cc/XpdzZGFZ/file-00000000327c71f6b0b1a04d6719c84c.png" alt="feature3" style="max-width:100%; border-radius:28px; border:2px solid #2a303e; box-shadow:0 12px 30px rgba(0,0,0,0.6); max-height:260px; object-fit:cover;" />
         </div>
       </div>
     </div>
@@ -488,7 +535,7 @@
     </div>
   </section>
 
-  <!-- Gallery — all images replaced with your provided links + extra pexels for variety -->
+  <!-- Gallery (without the three new images) -->
   <section id="gallery" class="section-padding bg-section-2">
     <div class="container">
       <div class="section-title"><h2>Computer Gallery</h2><p class="text-muted" style="color:#aaa;">Modern workspaces & development setups</p></div>
